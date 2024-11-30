@@ -72,25 +72,18 @@
 
     function wb_style_button(menu_bar)
     {
-
-        //const btn = document.createElement("span");
         const css = GM_getResourceText("styles")
         const button_html = '<span class="v-btn__content"><b class="v-icon wb_btn">UI+</b></span>'
-
-        // btn.innerHTML += button_html;
-        // btn.classList.add("ml-2", "mr-0", "v-btn", "v-btn--flat", "v-btn--icon", "v-btn--round", "v-size--default")
-        // btn.setAttribute("aria-label","Переключить вид")
 
         GM_addStyle(css)
 
         waitForElm('#app .nav-header .v-toolbar__content .row > div:nth-child(1) header > div').then((elm) => {
-                // elm.appendChild(btn);
+
                 var b_el = GM_addElement(elm, 'span', {
                   id: 'wb_ui_button',
                   class: 'ml-2 mr-0 v-btn v-btn--flat v-btn--icon v-btn--round v-size--default'
                 });
 
-                //document.querySelector('#wb_ui_button').innerHTML += button_html
                 b_el.innerHTML += button_html;
 
                 add_event()
