@@ -14,6 +14,7 @@
 // @grant       GM_getValue
 // @grant       GM_registerMenuCommand
 // @grant       GM_unregisterMenuCommand
+// @grant       GM_getResourceText
 // @run-at       document-end
 // @updateURL    https://raw.githubusercontent.com/ink-ru/wikijs-ui-tweaker/main/wiki-js.user.js
 // @downloadURL  https://raw.githubusercontent.com/ink-ru/wikijs-ui-tweaker/main/wiki-js.user.js
