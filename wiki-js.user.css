@@ -1,3 +1,3 @@
 
-body.wb_styled .v-main__wrap .page-col-sd { display: none; }
-body.wb_styled .page-col-content { width: fit-content; }
+body.UI_no_TOC .v-main__wrap .page-col-sd { display: none; }
+body.UI_no_TOC .page-col-content { width: fit-content; }
