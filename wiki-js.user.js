@@ -22,7 +22,7 @@
 // @updateURL    https://raw.githubusercontent.com/ink-ru/wikijs-ui-tweaker/main/wiki-js.user.js
 // @downloadURL  https://raw.githubusercontent.com/ink-ru/wikijs-ui-tweaker/main/wiki-js.user.js
 // @supportURL   https://github.com/ink-ru/wikijs-ui-tweaker/issues
-// @resource     styles https://raw.githubusercontent.com/ink-ru/wikijs-ui-tweaker/refs/heads/main/wiki-js.user.css?v=1
+// @resource     styles https://raw.githubusercontent.com/ink-ru/wikijs-ui-tweaker/refs/heads/main/wiki-js.user.css?v=0.1.1
 // @tag         UI/UX
 // @tag         wiki
 // @tag         productivity
@@ -113,19 +113,19 @@
                     // Все панели видны, скрываем первую
                     panels_state = 1
                     hide_TOC()
-                    wb_btn.innerHTML = '⏪'
+                    wb_btn.innerHTML = '<span class="v-btn__content"><b class="v-icon wb_btn">⏪</b></span>'
                     break
                 case 1:
                     // Одна панель видна, скрываем ее
                     panels_state = 0
                     hide_PTree()
-                    wb_btn.innerHTML = '⏩'
+                    wb_btn.innerHTML = '<span class="v-btn__content"><b class="v-icon wb_btn">⏩</b></span>'
                     break
               default: // 0
                     // Панели скрыты, возвращаем
                     panels_state = 2
                     show_All()
-                    wb_btn.innerHTML = '⏹⏪'
+                    wb_btn.innerHTML = '<span class="v-btn__content"><b class="v-icon wb_btn">⏹⏪</b></span>'
                     break
             };
         GM_setValue("panels_state", panels_state)
@@ -147,7 +147,7 @@
 
                 b_el.innerHTML += button_html
 
-                document.querySelector('.wb_btn').addEventListener("click", function (e) {
+                document.querySelector('#wb_ui_button').addEventListener("click", function (e) {
                     clck_handler(this)
                 });
 
