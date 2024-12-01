@@ -1,3 +1,8 @@
 
 body.UI_no_TOC .v-main__wrap .page-col-sd { display: none; }
 body.UI_no_TOC .page-col-content { width: fit-content; }
+
+#wb_ui_button {
+  min-width: 2rem;
+  cursor: pointer;
+}
