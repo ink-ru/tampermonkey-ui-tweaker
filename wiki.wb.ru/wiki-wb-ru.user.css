@@ -1,0 +1,13 @@
+/* .Mui(Box|Stack|Paper)-root */
+body [class^='Mui'][class*="-root"]
+,body [class^='Mui'][class*="-root"] *::before
+,body [class^='Mui'][class*="-root"] *:first-of-type
+
+/* ,body .WbWikiTextEditor-(paragraph|text) */
+,body [class*='Mui'] [class^='WbWikiText']
+
+,body [class^='Mui'][class*="-root"] [class$='-table'] table > tr
+{
+    background-color: white;
+    color: MidnightBlue;
+}
