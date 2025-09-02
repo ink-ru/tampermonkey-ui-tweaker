@@ -1,11 +1,13 @@
+/* ================== */
+/* =  Light Theme   = */
+/* ================== */
 
-
-/* .Mui(Box|Stack|Paper|Typography)-root */
-/* body [class^='Mui'][class*="-root"]
+body
+,#root > .MuiStack-root > .MuiBox-root
+,#root > .MuiStack-root > .MuiBox-root > div:nth-child(2) > div.MuiStack-root
 {
-    background-color: whitesmoke;
-} */
-
+    background-color: WhiteSmoke;
+}
 
 body [class^='Mui'][class*="-root"] *::before
 
@@ -18,16 +20,11 @@ body [class^='Mui'][class*="-root"] *::before
 
 /* table */
 ,body [class^='Mui'][class*="-root"] [class$='-table'] table > tr
+
+/* sidebar */
+,a > .MuiStack-root[role="button"]
+,a.MuiTypography-root > div[role="button"] > span
 {
     background-color: #FDFFFE;
-    color: DarkSlateGray!important;
+    color: DarkSlateGray;
 }
-
-/* MuiTypography-bodyMedium MuiTypography-noWrap */
-/* a.MuiTypography-root > div[role="button"] > span
-{
-    display: block;
-    background-color: rgba();
-    color: red!important;
-    border: 1px dotted gray;
-} */
