@@ -12,9 +12,14 @@ body
 
 body [class^='Mui'][class*="-root"] *::before
 
+
+
+/* sidebar  */
+
 ,body [class^='Mui'][class*="-root"] div#WbWikiTextEditor-content-editable-root
 ,.MuiStack-root > .MuiBox-root > .MuiPaper-root
 ,.MuiStack-root:has( >.MuiStack-root > span.MuiTypography-bodySuperLarge)
+,.MuiStack-root:has( >.MuiStack-root > span.MuiTypography-bodySuperLarge) *
 
 /* ,body .WbWikiTextEditor-(paragraph|text) */
 ,body [class*='Mui'] [class^='WbWikiText']
@@ -31,6 +36,12 @@ body [class^='Mui'][class*="-root"] *::before
 ,#article-form > div.MuiStack-root:nth-child(3) > .MuiStack-root:nth-child(2) > div.MuiStack-root > div.MuiStack-root
 {
     background-color: #FDFFFE;
+    color: DarkSlateGray;
+}
+
+#article-form > div.MuiStack-root:nth-child(1) span.MuiTypography-root
+,#root > .MuiStack-root > .MuiBox-root > div:nth-child(2) span.MuiTypography-root
+{
     color: DarkSlateGray;
 }
 
