@@ -7,6 +7,7 @@ body
 ,#root > .MuiStack-root > .MuiBox-root > div:nth-child(2) > div.MuiStack-root
 {
     background-color: WhiteSmoke;
+    color: DarkSlateGray;
 }
 
 body [class^='Mui'][class*="-root"] *::before
@@ -21,10 +22,16 @@ body [class^='Mui'][class*="-root"] *::before
 /* table */
 ,body [class^='Mui'][class*="-root"] [class$='-table'] table > tr
 
-/* sidebar */
+/* sidebar left */
 ,a > .MuiStack-root[role="button"]
 ,a.MuiTypography-root > div[role="button"] > span
+
+/* sidebar right */
+,#article-form > div.MuiStack-root:nth-child(3) > .MuiStack-root:nth-child(2) > div
+,#article-form > div.MuiStack-root:nth-child(3) > .MuiStack-root:nth-child(2) > div.MuiStack-root > div.MuiStack-root
 {
     background-color: #FDFFFE;
     color: DarkSlateGray;
 }
+
+
