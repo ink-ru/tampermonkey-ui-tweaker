@@ -1,0 +1,24 @@
+body .yt-full-screen-mode .yt-agile-card__summary,
+body .yt-full-screen-mode .yt-drag-agile-card__summary,
+body .yt-full-screen-mode .yt-agile-table__row-title__summary__text
+.yt-full-screen-mode .yt-agile-card__summary > span,
+.yt-agile-card__summary > span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-weight: normal;
+  letter-spacing: normal;
+}
+
+body .yt-board-wrapper .yt-agile-card .yt-agile-card__summary > .yt-agile-card__idWrapper {
+    font-weight: bold;
+    background-color: #fff;
+    color: black!important;
+    /* text-decoration-color: black;
+    font-family: 'Courier New', monospace;
+    */
+}
+
+.yt-full-screen-mode .yt-board-wrapper .yt-agile-card .yt-agile-card__summary > .yt-agile-card__idWrapper {
+  font-size-adjust: 0.55;
+  font-family: system-ui;
+}
