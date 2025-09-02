@@ -1,13 +1,33 @@
-/* .Mui(Box|Stack|Paper)-root */
-body [class^='Mui'][class*="-root"]
-,body [class^='Mui'][class*="-root"] *::before
-,body [class^='Mui'][class*="-root"] *:first-of-type
+
+
+/* .Mui(Box|Stack|Paper|Typography)-root */
+/* body [class^='Mui'][class*="-root"]
+{
+    background-color: whitesmoke;
+} */
+
+
+body [class^='Mui'][class*="-root"] *::before
+
+,body [class^='Mui'][class*="-root"] div#WbWikiTextEditor-content-editable-root
+,.MuiStack-root > .MuiBox-root > .MuiPaper-root
+,.MuiStack-root:has( >.MuiStack-root > span.MuiTypography-bodySuperLarge)
 
 /* ,body .WbWikiTextEditor-(paragraph|text) */
 ,body [class*='Mui'] [class^='WbWikiText']
 
+/* table */
 ,body [class^='Mui'][class*="-root"] [class$='-table'] table > tr
 {
-    background-color: white;
-    color: MidnightBlue;
+    background-color: #FDFFFE;
+    color: DarkSlateGray!important;
 }
+
+/* MuiTypography-bodyMedium MuiTypography-noWrap */
+/* a.MuiTypography-root > div[role="button"] > span
+{
+    display: block;
+    background-color: rgba();
+    color: red!important;
+    border: 1px dotted gray;
+} */
