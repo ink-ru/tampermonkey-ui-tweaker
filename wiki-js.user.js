@@ -109,6 +109,7 @@
             switch (panels_state) {
                 case -1:
                     GM_log('case -1: Ошибка!')
+                    panels_state = 2
                     break
                 case 2:
                     // Все панели видны, скрываем первую
