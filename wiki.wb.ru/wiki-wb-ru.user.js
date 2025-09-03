@@ -52,7 +52,7 @@
     }
 
     function clck_handler(wb_btn) {
-        // GM_log('Button clicked!')
+        GM_log('Button clicked!')
 
         var panels_state = -1
         panels_state = GM_getValue("panels_state", -1)
@@ -61,15 +61,14 @@
     function wb_style_button(menu_bar)
     {
         const css = GM_getResourceText("styles")
-        const button_html = '<span class="v-btn__content"><b class="v-icon wb_btn">⏹⏪</b></span>'
-
+        const button_html = '👀'
         GM_addStyle(css)
+        
+        waitForElm('.MuiStack-root:nth-child(2) .MuiStack-root > button.MuiButtonBase-root:first-child').then((elm) => {
 
-        waitForElm('#app .nav-header .v-toolbar__content .row > div:nth-child(1) header > div').then((elm) => {
-
-                let b_el = GM_addElement(elm, 'span', {
+                let b_el = GM_addElement(elm, 'button', {
                   id: 'wb_ui_button',
-                  class: 'ml-2 mr-0 v-btn v-btn--flat v-btn--icon v-btn--round v-size--default'
+                  class: 'MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-wmu1fs'
                 });
 
                 b_el.innerHTML += button_html
