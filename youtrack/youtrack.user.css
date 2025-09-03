@@ -39,17 +39,17 @@ body.temryakov yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: М�
     zoom: 1.1
     opacity: 1;
 }
-yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]):hover {
+body.temryakov yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]):hover {
     zoom: 1.2;
     
 }
-yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])) {
+body.temryakov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])) {
     zoom: .8;
     opacity: .5;
     max-height: 2rem;
     overflow: hidden;
 }
 
-yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])):hover {
+body.temryakov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])):hover {
     zoom: .8;
 }
