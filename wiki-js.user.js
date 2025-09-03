@@ -108,21 +108,25 @@
 
             switch (panels_state) {
                 case -1:
+                    GM_log('case -1: Ошибка!')
                     break
                 case 2:
                     // Все панели видны, скрываем первую
+                    GM_log('case 2: Все панели видны, скрываем первую')
                     panels_state = 1
                     hide_TOC()
                     wb_btn.innerHTML = '<span class="v-btn__content"><b class="v-icon wb_btn">⏪</b></span>'
                     break
                 case 1:
                     // Одна панель видна, скрываем ее
+                    GM_log('case 1: Одна панель видна, скрываем ее')
                     panels_state = 0
                     hide_PTree()
                     wb_btn.innerHTML = '<span class="v-btn__content"><b class="v-icon wb_btn">⏩</b></span>'
                     break
               default: // 0
                     // Панели скрыты, возвращаем
+                    GM_log('case 0: Панели скрыты, возвращаем')
                     panels_state = 2
                     show_All()
                     wb_btn.innerHTML = '<span class="v-btn__content"><b class="v-icon wb_btn">⏹⏪</b></span>'
