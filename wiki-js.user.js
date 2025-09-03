@@ -101,10 +101,10 @@
     }
 
     function clck_handler(wb_btn) {
-        GM_log('Button clicked!')
+        // GM_log('Button clicked!')
 
             var panels_state = -1
-            panels_state = GM_getValue("panels_state", -1)
+            panels_state = GM_getValue("panels_state", 2)
 
             switch (panels_state) {
                 case -1:
@@ -129,7 +129,7 @@
                     GM_log('case 0: Панели скрыты, возвращаем')
                     panels_state = 2
                     show_All()
-                    wb_btn.innerHTML = '<span class="v-btn__content"><b class="v-icon wb_btn">⏹⏪</b></span>'
+                    wb_btn.innerHTML = '<span class="v-btn__content"><b class="v-icon wb_btn">⏪⏪</b></span>'
                     break
             };
         GM_setValue("panels_state", panels_state)
@@ -138,7 +138,7 @@
     function wb_style_button(menu_bar)
     {
         const css = GM_getResourceText("styles")
-        const button_html = '<span class="v-btn__content"><b class="v-icon wb_btn">⏹⏪</b></span>'
+        const button_html = '<span class="v-btn__content"><b class="v-icon wb_btn">⏪⏪</b></span>'
 
         GM_addStyle(css)
 
