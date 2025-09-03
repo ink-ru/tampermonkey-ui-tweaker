@@ -1,3 +1,25 @@
+/* =========================== */
+/* ===    custom_theme     === */
+/* =========================== */
+
+body .yt-board-wrapper .yt-agile-card .yt-agile-card__summary > .yt-agile-card__idWrapper {
+    font-weight: bold;
+    background-color: #fff;
+    color: black!important;
+    /* text-decoration-color: black;
+    font-family: 'Courier New', monospace;
+    */
+}
+
+/* =========================== */
+/* ===      TV mode        === */
+/* =========================== */
+
+.yt-full-screen-mode .yt-board-wrapper .yt-agile-card .yt-agile-card__summary > .yt-agile-card__idWrapper {
+  font-size-adjust: 0.55;
+  font-family: system-ui;
+}
+
 body .yt-full-screen-mode .yt-agile-card__summary,
 body .yt-full-screen-mode .yt-drag-agile-card__summary,
 body .yt-full-screen-mode .yt-agile-table__row-title__summary__text
@@ -9,16 +31,25 @@ body .yt-full-screen-mode .yt-agile-table__row-title__summary__text
   letter-spacing: normal;
 }
 
-body .yt-board-wrapper .yt-agile-card .yt-agile-card__summary > .yt-agile-card__idWrapper {
-    font-weight: bold;
-    background-color: #fff;
-    color: black!important;
-    /* text-decoration-color: black;
-    font-family: 'Courier New', monospace;
-    */
+/* =========================== */
+/* ===   Максим Темряков   === */
+/* =========================== */
+
+body.temryakov yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]) {
+    zoom: 1.1
+    opacity: 1;
+}
+yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]):hover {
+    zoom: 1.2;
+    
+}
+yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])) {
+    zoom: .8;
+    opacity: .5;
+    max-height: 2rem;
+    overflow: hidden;
 }
 
-.yt-full-screen-mode .yt-board-wrapper .yt-agile-card .yt-agile-card__summary > .yt-agile-card__idWrapper {
-  font-size-adjust: 0.55;
-  font-family: system-ui;
+yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])):hover {
+    zoom: .8;
 }
