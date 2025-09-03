@@ -1,15 +1,15 @@
 // ==UserScript==
 // @name         wiki.wb.ru UI/UX enhancer
 // @namespace    https://github.com/ink-ru/tampermonkey-ui-tweaker
-// @version      0.0.1
+// @version      0.0.2
 // @description  Wiki WB look & feel enhancer
 // @author       https://white-ink.space
 // @copyright    CopyLeft )
 // @homepage     https://white-ink.space
 // @match        https://wiki.wb.ru/space/*
 // @exclude      https://wiki.wb.ru/pages
-// @icon         https://js.wiki/favicons/favicon-32x32.png
-// @icon64       https://js.wiki/favicons/apple-touch-icon.png
+// @icon         https://wiki.wb.ru/assets/favicon.png
+// @icon64       https://wiki.wb.ru/assets/favicon.svg?v=7c1bde
 // @grant       GM_addStyle
 // @grant       GM_setValue
 // @grant       GM_getValue
@@ -22,7 +22,7 @@
 // @updateURL    https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/blob/main/wiki.wb.ru/wiki-wb-ru.user.js
 // @downloadURL  https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/blob/main/wiki.wb.ru/wiki-wb-ru.user.js
 // @supportURL   https://github.com//ink-ru/tampermonkey-ui-tweaker/issues
-// @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/wiki.wb.ru/wiki-wb-ru.user.css?v=0.0.3
+// @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/wiki.wb.ru/wiki-wb-ru.user.css?v=0.0.2
 // @tag         UI/UX
 // @tag         wiki
 // @tag         productivity
