@@ -8,8 +8,8 @@
 // @homepage     https://white-ink.space
 // @match        https://youtrack.wildberries.ru/agiles/*
 // @exclude      https://youtrack.wildberries.ru/issue/*
-// @icon         https://wiki.wb.ru/assets/favicon.png
-// @icon64       https://wiki.wb.ru/assets/favicon.svg?v=7c1bde
+// @icon         https://youtrack.jetbrains.com/manager/favicon.ico
+// @icon64       https://youtrack.jetbrains.com/manager/apple-touch-icon.png
 // @grant       GM_addStyle
 // @grant       GM_setValue
 // @grant       GM_getValue
