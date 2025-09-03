@@ -22,7 +22,7 @@
 // @updateURL    https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/blob/main/wiki.wb.ru/wiki-wb-ru.user.js
 // @downloadURL  https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/blob/main/wiki.wb.ru/wiki-wb-ru.user.js
 // @supportURL   https://github.com//ink-ru/tampermonkey-ui-tweaker/issues
-// @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/wiki.wb.ru/wiki-wb-ru.user.css?v=0.0.2
+// @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/wiki.wb.ru/wiki-wb-ru.user.css?v=0.0.3
 // @tag         UI/UX
 // @tag         wiki
 // @tag         productivity
