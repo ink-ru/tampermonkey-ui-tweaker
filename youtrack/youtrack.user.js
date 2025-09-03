@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         wiki.wb.ru UI/UX enhancer
+// @name         YouTrack UI/UX enhancer
 // @namespace    https://github.com/ink-ru/tampermonkey-ui-tweaker/tree/main/youtrack
-// @version      0.0.2
-// @description  Wiki WB look & feel enhancer
+// @version      0.0.1
+// @description  YouTrack look & feel enhancer
 // @author       https://white-ink.space
 // @copyright    CopyLeft )
 // @homepage     https://white-ink.space
