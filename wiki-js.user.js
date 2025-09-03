@@ -158,4 +158,3 @@
     wb_style_button();
 
 })();
-
