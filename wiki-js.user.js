@@ -101,7 +101,7 @@
     }
 
     function clck_handler(wb_btn) {
-        // GM_log('Button clicked!')
+        GM_log('Button clicked!')
 
             var panels_state = -1
             panels_state = GM_getValue("panels_state", -1)
