@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Wiki.js UI/UX enhancer
-// @namespace    https://github.com/ink-ru/wikijs-ui-tweaker
+// @namespace    https://github.com/ink-ru/tampermonkey-ui-tweaker
 // @version      0.1.1
 // @description  Wiki.js look & feel enhancer
 // @author       https://white-ink.space
@@ -19,10 +19,10 @@
 // @grant       GM_addElement
 // @grant       GM_log
 // @run-at       document-end
-// @updateURL    https://raw.githubusercontent.com/ink-ru/wikijs-ui-tweaker/main/wiki-js.user.js
-// @downloadURL  https://raw.githubusercontent.com/ink-ru/wikijs-ui-tweaker/main/wiki-js.user.js
-// @supportURL   https://github.com/ink-ru/wikijs-ui-tweaker/issues
-// @resource     styles https://raw.githubusercontent.com/ink-ru/wikijs-ui-tweaker/refs/heads/main/wiki-js.user.css?v=0.1.1
+// @updateURL    https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/main/wiki-js.user.js
+// @downloadURL  https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/main/wiki-js.user.js
+// @supportURL   https://github.com/ink-ru/tampermonkey-ui-tweaker/issues
+// @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/wiki-js.user.css?v=0.1.1
 // @tag         UI/UX
 // @tag         wiki
 // @tag         productivity
