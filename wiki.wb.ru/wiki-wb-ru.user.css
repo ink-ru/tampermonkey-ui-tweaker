@@ -3,44 +3,43 @@
 /* ================== */
 
 body
-,#root > .MuiStack-root > .MuiBox-root
-,#root > .MuiStack-root > .MuiBox-root > div:nth-child(2) > div.MuiStack-root
+,#root.light_theme > .MuiStack-root > .MuiBox-root
+,#root.light_theme > .MuiStack-root > .MuiBox-root > div:nth-child(2) > div.MuiStack-root
 {
     background-color: WhiteSmoke;
     color: DarkSlateGray;
 }
 
-body [class^='Mui'][class*="-root"] *::before
 
-
+#root.light_theme [class^='Mui'][class*="-root"] *::before
 
 /* sidebar  */
 
-,body [class^='Mui'][class*="-root"] div#WbWikiTextEditor-content-editable-root
-,.MuiStack-root > .MuiBox-root > .MuiPaper-root
-,.MuiStack-root:has( >.MuiStack-root > span.MuiTypography-bodySuperLarge)
-,.MuiStack-root:has( >.MuiStack-root > span.MuiTypography-bodySuperLarge) *
+,#root.light_theme [class^='Mui'][class*="-root"] div#WbWikiTextEditor-content-editable-root
+,#root.light_theme .MuiStack-root > .MuiBox-root > .MuiPaper-root
+,#root.light_theme .MuiStack-root:has( >.MuiStack-root > span.MuiTypography-bodySuperLarge)
+,#root.light_theme .MuiStack-root:has( >.MuiStack-root > span.MuiTypography-bodySuperLarge) *
 
-/* ,body .WbWikiTextEditor-(paragraph|text) */
-,body [class*='Mui'] [class^='WbWikiText']
+/* Text */
+,#root.light_theme [class*='Mui'] [class^='WbWikiText']
 
 /* table */
-,body [class^='Mui'][class*="-root"] [class$='-table'] table > tr
+,#root.light_theme [class^='Mui'][class*="-root"] [class$='-table'] table > tr
 
 /* sidebar left */
-,a > .MuiStack-root[role="button"]
-,a.MuiTypography-root > div[role="button"] > span
+,#root.light_theme a > .MuiStack-root[role="button"]
+,#root.light_theme a.MuiTypography-root > div[role="button"] > span
 
 /* sidebar right */
-,#article-form > div.MuiStack-root:nth-child(3) > .MuiStack-root:nth-child(2) > div
-,#article-form > div.MuiStack-root:nth-child(3) > .MuiStack-root:nth-child(2) > div.MuiStack-root > div.MuiStack-root
+,#root.light_theme #article-form > div.MuiStack-root:nth-child(3) > .MuiStack-root:nth-child(2) > div
+,#root.light_theme #article-form > div.MuiStack-root:nth-child(3) > .MuiStack-root:nth-child(2) > div.MuiStack-root > div.MuiStack-root
 {
     background-color: #FDFFFE;
     color: DarkSlateGray;
 }
 
-#article-form > div.MuiStack-root:nth-child(1) span.MuiTypography-root
-,#root > .MuiStack-root > .MuiBox-root > div:nth-child(2) span.MuiTypography-root
+#root.light_theme #article-form > div.MuiStack-root:nth-child(1) span.MuiTypography-root
+,#root.light_theme > .MuiStack-root > .MuiBox-root > div:nth-child(2) span.MuiTypography-root
 {
     color: DarkSlateGray;
 }
