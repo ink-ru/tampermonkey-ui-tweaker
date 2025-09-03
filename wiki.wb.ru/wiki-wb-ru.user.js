@@ -53,6 +53,8 @@
 
     function clck_handler(wb_btn) {
         GM_log('Button clicked!')
+        
+        document.querySelector("#root").classList.toggle("light_theme")
 
         var panels_state = -1
         panels_state = GM_getValue("panels_state", -1)
@@ -64,7 +66,7 @@
         const button_html = '👀'
         GM_addStyle(css)
         
-        waitForElm('.MuiStack-root:nth-child(2) .MuiStack-root > button.MuiButtonBase-root:first-child').then((elm) => {
+        waitForElm('header .MuiStack-root:nth-child(2) .MuiStack-root:has( > button.MuiButtonBase-root)').then((elm) => {
 
                 let b_el = GM_addElement(elm, 'button', {
                   id: 'wb_ui_button',
