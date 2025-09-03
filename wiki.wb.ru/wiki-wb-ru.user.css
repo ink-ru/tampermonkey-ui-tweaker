@@ -10,14 +10,19 @@ body
     color: DarkSlateGray;
 }
 
+/* ================== */
+/* =  Light Theme   = */
+/* ================== */
 
 #root.light_theme [class^='Mui'][class*="-root"] *::before
 
 /* sidebar  */
 
 ,#root.light_theme [class^='Mui'][class*="-root"] div#WbWikiTextEditor-content-editable-root
+/* Assets  */
 ,#root.light_theme .MuiStack-root > .MuiBox-root > .MuiPaper-root
-,#root.light_theme .MuiStack-root:has( >.MuiStack-root > span.MuiTypography-bodySuperLarge)
+/* ,#root.light_theme .MuiStack-root:has( >.MuiStack-root > span.MuiTypography-bodySuperLarge) */
+,#root.light_theme main .MuiStack-root:first-child .MuiStack-root:has( >.MuiStack-root >.MuiStack-root > span.MuiTypography-bodySuperLarge)
 ,#root.light_theme .MuiStack-root:has( >.MuiStack-root > span.MuiTypography-bodySuperLarge) *
 
 /* Text */
@@ -38,10 +43,11 @@ body
     color: DarkSlateGray;
 }
 
+/* ================== */
+/* =  sidebar left  = */
+/* ================== */
 #root.light_theme #article-form > div.MuiStack-root:nth-child(1) span.MuiTypography-root
 ,#root.light_theme > .MuiStack-root > .MuiBox-root > div:nth-child(2) span.MuiTypography-root
 {
     color: DarkSlateGray;
 }
-
-
