@@ -38,6 +38,9 @@ body
 /* sidebar right */
 ,#root.light_theme #article-form > div.MuiStack-root:nth-child(3) > .MuiStack-root:nth-child(2) > div
 ,#root.light_theme #article-form > div.MuiStack-root:nth-child(3) > .MuiStack-root:nth-child(2) > div.MuiStack-root > div.MuiStack-root
+
+/* bottom filler for empty page */
+,#root.light_theme .MuiStack-root > .MuiBox-root:has(> #WbWikiTextEditor-content-editable-root)
 {
     background-color: #FDFFFE;
     color: DarkSlateGray;
