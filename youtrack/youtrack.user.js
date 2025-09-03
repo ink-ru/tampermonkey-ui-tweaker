@@ -6,8 +6,8 @@
 // @author       https://white-ink.space
 // @copyright    CopyLeft )
 // @homepage     https://white-ink.space
-// @match        https://wiki.wb.ru/space/*
-// @exclude      https://wiki.wb.ru/pages
+// @match        https://youtrack.wildberries.ru/agiles/*
+// @exclude      https://youtrack.wildberries.ru/issue/*
 // @icon         https://wiki.wb.ru/assets/favicon.png
 // @icon64       https://wiki.wb.ru/assets/favicon.svg?v=7c1bde
 // @grant       GM_addStyle
