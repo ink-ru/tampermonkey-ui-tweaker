@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTrack UI/UX enhancer
 // @namespace    https://github.com/ink-ru/tampermonkey-ui-tweaker/tree/main/youtrack
-// @version      0.0.3
+// @version      0.0.4
 // @description  YouTrack look & feel enhancer
 // @author       https://white-ink.space
 // @copyright    CopyLeft )
@@ -22,7 +22,7 @@
 // @updateURL    https://github.com/ink-ru/tampermonkey-ui-tweaker/raw/refs/heads/main/youtrack/youtrack.user.js
 // @downloadURL  https://github.com/ink-ru/tampermonkey-ui-tweaker/raw/refs/heads/main/youtrack/youtrack.user.js
 // @supportURL   https://github.com//ink-ru/tampermonkey-ui-tweaker/issues
-// @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/youtrack/youtrack.user.css?v=0.0.3
+// @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/youtrack/youtrack.user.css?v=0.0.4
 // @tag         UI/UX
 // @tag         wiki
 // @tag         productivity
