@@ -81,7 +81,7 @@
             e.classList.toggle('active_f231')
         });
 
-        / ========================
+        // ========================
         // @temryakov.maksim
         let temryakov_el = GM_addElement(elm, 'button', {
             id: 'temryakov_ui_button',
