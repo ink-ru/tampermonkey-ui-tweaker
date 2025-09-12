@@ -89,7 +89,7 @@
             class: 'button_a96a button_a96a heightS_efe7 buttonWithoutIcon_b3e8'
         });
 
-        temryakov_el.innerHTML += 'Игорь'
+        temryakov_el.innerHTML += 'temryakov.maks'
 
         document.querySelector('#temryakov_ui_button').addEventListener("click", function (e) {
             document.querySelector("body").classList.toggle("show_temryakov")
