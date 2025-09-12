@@ -63,6 +63,7 @@
         document.querySelector('#wb_ui_button').addEventListener("click", function (e) {
             // wb_style_clck_handler(this)
             document.querySelector("body").classList.toggle("custom_theme")
+            e.classList.toggle('active_f231')
         });
 
         // ========================
@@ -77,6 +78,7 @@
 
         document.querySelector('#petrov_ui_button').addEventListener("click", function (e) {
             document.querySelector("body").classList.toggle("show_petrov")
+            e.classList.toggle('active_f231')
         });
     }
 
