@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTrack UI/UX enhancer
 // @namespace    https://github.com/ink-ru/tampermonkey-ui-tweaker/tree/main/youtrack
-// @version      0.0.5
+// @version      0.0.6
 // @description  YouTrack look & feel enhancer
 // @author       https://white-ink.space
 // @copyright    CopyLeft )
@@ -22,7 +22,7 @@
 // @updateURL    https://github.com/ink-ru/tampermonkey-ui-tweaker/raw/refs/heads/main/youtrack/youtrack.user.js
 // @downloadURL  https://github.com/ink-ru/tampermonkey-ui-tweaker/raw/refs/heads/main/youtrack/youtrack.user.js
 // @supportURL   https://github.com//ink-ru/tampermonkey-ui-tweaker/issues
-// @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/youtrack/youtrack.user.css?v=0.0.5
+// @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/youtrack/youtrack.user.css?v=0.0.6
 // @tag         UI/UX
 // @tag         wiki
 // @tag         productivity
@@ -78,6 +78,21 @@
 
         document.querySelector('#petrov_ui_button').addEventListener("click", function (e) {
             document.querySelector("body").classList.toggle("show_petrov")
+            e.classList.toggle('active_f231')
+        });
+
+        / ========================
+        // @temryakov.maksim
+        let temryakov_el = GM_addElement(elm, 'button', {
+            id: 'temryakov_ui_button',
+            title: '@temryakov.maksim',
+            class: 'button_a96a button_a96a heightS_efe7 buttonWithoutIcon_b3e8'
+        });
+
+        temryakov_el.innerHTML += 'Игорь'
+
+        document.querySelector('#temryakov_ui_button').addEventListener("click", function (e) {
+            document.querySelector("body").classList.toggle("show_temryakov")
             e.classList.toggle('active_f231')
         });
     }
