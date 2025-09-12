@@ -32,6 +32,29 @@ body .yt-full-screen-mode .yt-agile-table__row-title__summary__text
 }
 
 /* =========================== */
+/* ===     Игорь Петров    === */
+/* =========================== */
+
+body.show_petrov yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Игорь Петров"]) {
+    zoom: 1.1
+    opacity: 1;
+}
+body.show_petrov yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Игорь Петров"]):hover {
+    zoom: 1.2;
+    
+}
+body.show_petrov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Игорь Петров"])) {
+    zoom: .8;
+    opacity: .5;
+    max-height: 2rem;
+    overflow: hidden;
+}
+
+body.show_petrov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Игорь Петров"])):hover {
+    zoom: .8;
+}
+
+/* =========================== */
 /* ===   Максим Темряков   === */
 /* =========================== */
 
