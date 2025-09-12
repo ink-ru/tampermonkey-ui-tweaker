@@ -67,6 +67,7 @@
 
         // ========================
         // @petrov.igor51
+        /*
         let petrov_el = GM_addElement(elm, 'button', {
             id: 'petrov_ui_button',
             title: '@petrov.igor51'
@@ -78,6 +79,7 @@
         document.querySelector('#petrov_ui_button').addEventListener("click", function (e) {
             document.querySelector("body").classList.toggle("show_petrov")
         });
+        */
     }
 
      waitForElm('.yt-agile-board__toolbar > ng-transclude').then((elm) => {
