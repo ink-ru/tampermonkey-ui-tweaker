@@ -58,21 +58,21 @@ body.show_petrov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assign
 /* ===   Максим Темряков   === */
 /* =========================== */
 
-body.temryakov yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]) {
+body.show_temryakov yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]) {
     zoom: 1.1
     opacity: 1;
 }
-body.temryakov yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]):hover {
+body.show_temryakov yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]):hover {
     zoom: 1.2;
     
 }
-body.temryakov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])) {
+body.show_temryakov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])) {
     zoom: .8;
     opacity: .5;
     max-height: 2rem;
     overflow: hidden;
 }
 
-body.temryakov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])):hover {
+body.show_temryakov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])):hover {
     zoom: .8;
 }
