@@ -67,10 +67,9 @@
 
         // ========================
         // @petrov.igor51
-        /*
         let petrov_el = GM_addElement(elm, 'button', {
             id: 'petrov_ui_button',
-            title: '@petrov.igor51'
+            title: '@petrov.igor51',
             class: 'button_a96a button_a96a heightS_efe7 buttonWithoutIcon_b3e8'
         });
 
@@ -79,7 +78,6 @@
         document.querySelector('#petrov_ui_button').addEventListener("click", function (e) {
             document.querySelector("body").classList.toggle("show_petrov")
         });
-        */
     }
 
      waitForElm('.yt-agile-board__toolbar > ng-transclude').then((elm) => {
