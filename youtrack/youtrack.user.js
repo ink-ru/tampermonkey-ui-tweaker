@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTrack UI/UX enhancer
 // @namespace    https://github.com/ink-ru/tampermonkey-ui-tweaker/tree/main/youtrack
-// @version      0.0.6
+// @version      0.0.7
 // @description  YouTrack look & feel enhancer
 // @author       https://white-ink.space
 // @copyright    CopyLeft )
@@ -22,7 +22,7 @@
 // @updateURL    https://github.com/ink-ru/tampermonkey-ui-tweaker/raw/refs/heads/main/youtrack/youtrack.user.js
 // @downloadURL  https://github.com/ink-ru/tampermonkey-ui-tweaker/raw/refs/heads/main/youtrack/youtrack.user.js
 // @supportURL   https://github.com//ink-ru/tampermonkey-ui-tweaker/issues
-// @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/youtrack/youtrack.user.css?v=0.0.6
+// @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/youtrack/youtrack.user.css?v=0.0.7
 // @tag         UI/UX
 // @tag         wiki
 // @tag         productivity
@@ -51,6 +51,15 @@
         });
     }
 
+    // users.forEach(u => { body.classList.remove(USER_CLASS_PREFIX + u) })
+    function clear_classList(el, prefix)
+    {
+        var classes = el.className.split(" ").filter(function(c) {
+            return c.lastIndexOf(prefix, 0) !== 0;
+        });
+        el.className = classes.join(" ").trim();
+    }
+
     function wb_buttons(elm)
     {
         let b_el = GM_addElement(elm, 'button', {
@@ -58,8 +67,11 @@
             class: 'button_a96a button_a96a heightS_efe7 buttonWithoutIcon_b3e8'
         });
 
+        // ========================
+        // WB styles
+
         b_el.innerHTML += '👀'
-        
+
         document.querySelector('#wb_ui_button').addEventListener("click", function (e) {
             // wb_style_clck_handler(this)
             document.querySelector("body").classList.toggle("custom_theme")
@@ -67,40 +79,48 @@
         });
 
         // ========================
-        // @petrov.igor51
-        let petrov_el = GM_addElement(elm, 'button', {
-            id: 'petrov_ui_button',
-            title: '@petrov.igor51',
+        // users
+
+        const users = ['petrov', 'temryakov'];
+        const USER_CLASS_PREFIX = 'show_';
+
+        users.forEach((user) => {
+          let new_el = GM_addElement(elm, 'button', {
+            id: user + '_ui_button',
+            title: '@' + user + '.igor51',
             class: 'button_a96a button_a96a heightS_efe7 buttonWithoutIcon_b3e8'
+          });
+          new_el.innerHTML += user;
+
+          document.querySelector('#' + user + '_ui_button').addEventListener("click", function (e)
+          {
+                const body = document.body;
+                const currentClass = USER_CLASS_PREFIX + user;
+
+                // Если класс уже активен - убираем его
+                if (body.classList.contains(currentClass))
+                {
+                  body.classList.remove(currentClass);
+                }
+                else
+                {
+                  // Убираем все классы пользователей
+                  // users.forEach(u => { body.classList.remove(USER_CLASS_PREFIX + u) })
+                  clear_classList(body, USER_CLASS_PREFIX)
+                  // Добавляем класс текущего пользователя
+                  body.classList.add(currentClass);
+                }
+          });
+
         });
 
-        petrov_el.innerHTML += 'Игорь'
 
-        document.querySelector('#petrov_ui_button').addEventListener("click", function (e) {
-            document.querySelector("body").classList.toggle("show_petrov")
-            e.classList.toggle('active_f231')
-        });
-
-        // ========================
-        // @temryakov.maksim
-        let temryakov_el = GM_addElement(elm, 'button', {
-            id: 'temryakov_ui_button',
-            title: '@temryakov.maksim',
-            class: 'button_a96a button_a96a heightS_efe7 buttonWithoutIcon_b3e8'
-        });
-
-        temryakov_el.innerHTML += 'temryakov.maks'
-
-        document.querySelector('#temryakov_ui_button').addEventListener("click", function (e) {
-            document.querySelector("body").classList.toggle("show_temryakov")
-            e.classList.toggle('active_f231')
-        });
     }
 
      waitForElm('.yt-agile-board__toolbar > ng-transclude').then((elm) => {
          const css = GM_getResourceText("styles")
          GM_addStyle(css)
-         
+
          wb_buttons(elm)
      });
 
