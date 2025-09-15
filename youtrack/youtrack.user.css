@@ -1,8 +1,9 @@
 /* =========================== */
-/* ===    custom_theme     === */
+/* ===    Custom_theme     === */
 /* =========================== */
 
-body .yt-board-wrapper .yt-agile-card .yt-agile-card__summary > .yt-agile-card__idWrapper {
+body.custom_theme .yt-board-wrapper .yt-agile-card .yt-agile-card__summary > .yt-agile-card__idWrapper
+{
     font-weight: bold;
     background-color: #fff;
     color: black!important;
@@ -15,16 +16,18 @@ body .yt-board-wrapper .yt-agile-card .yt-agile-card__summary > .yt-agile-card__
 /* ===      TV mode        === */
 /* =========================== */
 
-.yt-full-screen-mode .yt-board-wrapper .yt-agile-card .yt-agile-card__summary > .yt-agile-card__idWrapper {
+body.custom_theme .yt-full-screen-mode .yt-board-wrapper .yt-agile-card .yt-agile-card__summary > .yt-agile-card__idWrapper
+{
   font-size-adjust: 0.55;
   font-family: system-ui;
 }
 
-body .yt-full-screen-mode .yt-agile-card__summary,
-body .yt-full-screen-mode .yt-drag-agile-card__summary,
-body .yt-full-screen-mode .yt-agile-table__row-title__summary__text
-.yt-full-screen-mode .yt-agile-card__summary > span,
-.yt-agile-card__summary > span {
+body.custom_theme .yt-full-screen-mode .yt-agile-card__summary,
+body.custom_theme .yt-full-screen-mode .yt-drag-agile-card__summary,
+body.custom_theme .yt-full-screen-mode .yt-agile-table__row-title__summary__text,
+body.custom_theme .yt-full-screen-mode .yt-agile-card__summary > span,
+body.custom_theme .yt-agile-card__summary > span
+{
   font-size: 0.8rem;
   font-weight: 500;
   font-weight: normal;
