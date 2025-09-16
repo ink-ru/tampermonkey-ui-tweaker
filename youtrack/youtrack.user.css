@@ -38,22 +38,22 @@ body.custom_theme .yt-agile-card__summary > span
 /* ===     Игорь Петров    === */
 /* =========================== */
 
-body.show_petrov yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Игорь Петров"]) {
+body.show_Игорь_Петров yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Игорь Петров"]) {
     zoom: 1.1
     opacity: 1;
 }
-body.show_petrov yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Игорь Петров"]):hover {
+body.show_Игорь_Петров yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Игорь Петров"]):hover {
     zoom: 1.2;
     
 }
-body.show_petrov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Игорь Петров"])) {
+body.show_Игорь_Петров yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Игорь Петров"])) {
     zoom: .8;
     opacity: .5;
     max-height: 2rem;
     overflow: hidden;
 }
 
-body.show_petrov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Игорь Петров"])):hover {
+body.show_Игорь_Петров yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Игорь Петров"])):hover {
     zoom: .8;
 }
 
@@ -61,21 +61,186 @@ body.show_petrov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assign
 /* ===   Максим Темряков   === */
 /* =========================== */
 
-body.show_temryakov yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]) {
+body.show_Максим_Темряков yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]) {
     zoom: 1.1
     opacity: 1;
 }
-body.show_temryakov yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]):hover {
+body.show_Максим_Темряков yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]):hover {
     zoom: 1.2;
     
 }
-body.show_temryakov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])) {
+body.show_Максим_Темряков yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])) {
     zoom: .8;
     opacity: .5;
     max-height: 2rem;
     overflow: hidden;
 }
 
-body.show_temryakov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])):hover {
+body.show_Максим_Темряков yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])):hover {
     zoom: .8;
 }
+
+/* =========================== */
+/* ===   Максим Темряков   === */
+/* =========================== */
+
+body.show_Максим_Темряков yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]) {
+    zoom: 1.1
+    opacity: 1;
+}
+body.show_Максим_Темряков yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]):hover {
+    zoom: 1.2;
+    
+}
+body.show_Максим_Темряков yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])) {
+    zoom: .8;
+    opacity: .5;
+    max-height: 2rem;
+    overflow: hidden;
+}
+
+body.show_Максим_Темряков yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])):hover {
+    zoom: .8;
+}
+
+/* =========================== */
+/* ===     Жданов_Артём    === */
+/* =========================== */
+
+body.show_Жданов_Артём yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]) {
+    zoom: 1.1
+    opacity: 1;
+}
+body.show_Жданов_Артём yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]):hover {
+    zoom: 1.2;
+    
+}
+body.show_Жданов_Артём yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])) {
+    zoom: .8;
+    opacity: .5;
+    max-height: 2rem;
+    overflow: hidden;
+}
+
+body.show_Жданов_Артём yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])):hover {
+    zoom: .8;
+}
+
+/* =========================== */
+/* ===    Максим_Тёмкин    === */
+/* =========================== */
+
+body.show_Максим_Тёмкин yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]) {
+    zoom: 1.1
+    opacity: 1;
+}
+body.show_Максим_Тёмкин yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]):hover {
+    zoom: 1.2;
+    
+}
+body.show_Максим_Тёмкин yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])) {
+    zoom: .8;
+    opacity: .5;
+    max-height: 2rem;
+    overflow: hidden;
+}
+
+body.show_Максим_Тёмкин yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])):hover {
+    zoom: .8;
+}
+
+/* =========================== */
+/* ===    show_Unassigned    === */
+/* =========================== */
+
+body.show_Unassigned yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]) {
+    zoom: 1.1
+    opacity: 1;
+}
+body.show_Unassigned yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]):hover {
+    zoom: 1.2;
+    
+}
+body.show_Unassigned yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])) {
+    zoom: .8;
+    opacity: .5;
+    max-height: 2rem;
+    overflow: hidden;
+}
+
+body.show_Unassigned yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])):hover {
+    zoom: .8;
+}
+
+/* =========================== */
+/* ===    show_Yurii_Vasin    === */
+/* =========================== */
+
+body.show_Yurii_Vasin yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]) {
+    zoom: 1.1
+    opacity: 1;
+}
+body.show_Yurii_Vasin yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]):hover {
+    zoom: 1.2;
+    
+}
+body.show_Yurii_Vasin yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])) {
+    zoom: .8;
+    opacity: .5;
+    max-height: 2rem;
+    overflow: hidden;
+}
+
+body.show_Yurii_Vasin yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])):hover {
+    zoom: .8;
+}
+
+/* =========================== */
+/* ===     show_Корпусов_Василий    === */
+/* =========================== */
+
+body.show_Корпусов_Василий yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]) {
+    zoom: 1.1
+    opacity: 1;
+}
+body.show_Корпусов_Василий yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]):hover {
+    zoom: 1.2;
+    
+}
+body.show_Корпусов_Василий yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])) {
+    zoom: .8;
+    opacity: .5;
+    max-height: 2rem;
+    overflow: hidden;
+}
+
+body.show_Корпусов_Василий yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])):hover {
+    zoom: .8;
+}
+
+/* =========================== */
+/* ===     show_Yulian_Efimov    === */
+/* =========================== */
+
+body.show_Yulian_Efimov yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]) {
+    zoom: 1.1
+    opacity: 1;
+}
+body.show_Yulian_Efimov yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"]):hover {
+    zoom: 1.2;
+    
+}
+body.show_Yulian_Efimov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])) {
+    zoom: .8;
+    opacity: .5;
+    max-height: 2rem;
+    overflow: hidden;
+}
+
+body.show_Yulian_Efimov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])):hover {
+    zoom: .8;
+}
+
+
+/* show_Svetlana_Novoseltseva */
+
