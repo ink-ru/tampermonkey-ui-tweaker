@@ -51,6 +51,26 @@
         });
     }
 
+    function get_users()
+    {
+        const users = [...new Set(
+                        [...document.querySelectorAll('yt-issue-custom-field-lazy[title^="Assignee:"]')]
+                         .map(el => (el.getAttribute('title') || '')
+                         .replace(/^Assignee:\s*/, '')
+                         .replace(/\s+/, '_')
+                        .trim()
+                        )
+                        .filter(Boolean)
+                        )];
+
+        if (users.length > 0)
+        {
+            GM_setValue("users_list", users)
+            GM_log('Users list has been updated!')
+        }
+        else GM_log('No users have been found, nothing to do!')
+    }
+
     // users.forEach(u => { body.classList.remove(USER_CLASS_PREFIX + u) })
     function clear_classList(el, prefix)
     {
@@ -81,7 +101,7 @@
         // ========================
         // users
 
-        const users = ['petrov', 'temryakov'];
+        const users = GM_getValue("users_list", ['Игорь_Петров', , 'Жданов_Артём', 'Максим_Темряков', 'Максим_Тёмкин']);
         const USER_CLASS_PREFIX = 'show_';
 
         users.forEach((user) => {
@@ -123,5 +143,7 @@
 
          wb_buttons(elm)
      });
+
+    setTimeout(get_users, 12000)
 
 })();
