@@ -66,7 +66,7 @@
         if (users.length > 0)
         {
             GM_setValue("users_list", users)
-            GM_log('Users list has been updated!')
+            // GM_log('Users list has been updated!')
         }
         else GM_log('No users have been found, nothing to do!')
     }
@@ -74,10 +74,21 @@
     // users.forEach(u => { body.classList.remove(USER_CLASS_PREFIX + u) })
     function clear_classList(el, prefix)
     {
-        var classes = el.className.split(" ").filter(function(c) {
-            return c.lastIndexOf(prefix, 0) !== 0;
-        });
-        el.className = classes.join(" ").trim();
+        if('className' in el) // Object
+        {
+            var classes = el.className.split(" ").filter(function(c) {
+                return c.lastIndexOf(prefix, 0) !== 0;
+            });
+            el.className = classes.join(" ").trim();
+        }
+        else if(typeof el[Symbol.iterator] === 'function') // if((el instanceof NodeList) or (el instanceof Array))
+        {
+            for (const item of el) // NodeList
+            {
+              //clear_classList(item, prefix)
+              GM_log(item)
+            }
+        }
     }
 
     function wb_buttons(elm)
@@ -114,22 +125,30 @@
 
           document.querySelector('#' + user + '_ui_button').addEventListener("click", function (e)
           {
-                const body = document.body;
-                const currentClass = USER_CLASS_PREFIX + user;
+              // GM_log(e.currentTarget === this)
 
-                // Если класс уже активен - убираем его
-                if (body.classList.contains(currentClass))
-                {
-                  body.classList.remove(currentClass);
-                }
-                else
-                {
+              const body = document.body
+              const btns = document.querySelectorAll('button[id$=_ui_button]')
+              const currentClass = USER_CLASS_PREFIX + user
+
+              // clear_classList(btns, 'active_')
+
+              // Если класс уже активен - убираем его
+              if (body.classList.contains(currentClass))
+              {
+                  body.classList.remove(currentClass)
+                  GM_log('User filter enabled!')
+              }
+              else
+              {
                   // Убираем все классы пользователей
-                  // users.forEach(u => { body.classList.remove(USER_CLASS_PREFIX + u) })
                   clear_classList(body, USER_CLASS_PREFIX)
+
                   // Добавляем класс текущего пользователя
-                  body.classList.add(currentClass);
-                }
+                  body.classList.add(currentClass)
+                  this.classList.add('active_f231')
+                  GM_log('User filter disabled!')
+              }
           });
 
         });
@@ -144,6 +163,6 @@
          wb_buttons(elm)
      });
 
-    setTimeout(get_users, 12000)
+    setTimeout(get_users, 20000)
 
 })();
