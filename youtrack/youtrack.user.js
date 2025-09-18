@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTrack UI/UX enhancer
 // @namespace    https://github.com/ink-ru/tampermonkey-ui-tweaker/tree/main/youtrack
-// @version      0.0.8
+// @version      0.0.9
 // @description  YouTrack look & feel enhancer
 // @author       https://white-ink.space
 // @copyright    CopyLeft )
@@ -22,7 +22,7 @@
 // @updateURL    https://github.com/ink-ru/tampermonkey-ui-tweaker/raw/refs/heads/main/youtrack/youtrack.user.js
 // @downloadURL  https://github.com/ink-ru/tampermonkey-ui-tweaker/raw/refs/heads/main/youtrack/youtrack.user.js
 // @supportURL   https://github.com//ink-ru/tampermonkey-ui-tweaker/issues
-// @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/youtrack/youtrack.user.css?v=0.0.8
+// @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/youtrack/youtrack.user.css?v=0.0.9
 // @tag         UI/UX
 // @tag         wiki
 // @tag         productivity
@@ -71,24 +71,61 @@
         else GM_log('No users have been found, nothing to do!')
     }
 
-    // users.forEach(u => { body.classList.remove(USER_CLASS_PREFIX + u) })
-    function clear_classList(el, prefix)
+    // ===========================================
+    //          Remove all classes by part
+    // ===========================================
+    function clear_classList(el, part)
     {
-        if('className' in el) // Object
+        // DOM Object
+        if('className' in el)
         {
             var classes = el.className.split(" ").filter(function(c) {
-                return c.lastIndexOf(prefix, 0) !== 0;
-            });
-            el.className = classes.join(" ").trim();
+                return c.lastIndexOf(part, 0) !== 0
+            })
+
+            el.className = classes.join(" ").trim()
+
+            return true // POSIX 0, EX_OK
         }
-        else if(typeof el[Symbol.iterator] === 'function') // if((el instanceof NodeList) or (el instanceof Array))
+        // if((el instanceof NodeList) or (el instanceof Array))
+        else if(typeof el[Symbol.iterator] === 'function')
         {
             for (const item of el) // NodeList
             {
-              //clear_classList(item, prefix)
-              GM_log(item)
+              clear_classList(item, part)
             }
         }
+
+        return false // POSIX 1 - general error
+    }
+
+    function toggle_boolValue(var_name)
+    {
+        if (typeof var_name === 'string')
+        {
+
+            try {
+                GM_setValue(var_name, !GM_getValue(var_name, false))
+                return true
+            } catch (error) {
+                GM_log(`Error inverting value for var "${var_name}":` + error)
+                return false
+            }
+        }
+
+        GM_log('Parameter must be a string');
+
+        return false;
+    }
+
+    function ui_btn_clk_hdlr(e)
+    {
+        // Handle both event object and direct DOM element call
+        const target = e && e.target ? e.target : (e instanceof Element ? e : this);
+
+        document.querySelector("body").classList.toggle("custom_theme")
+        target.classList.toggle('active_f231')
+        if(!('fake' in e)) toggle_boolValue("custom_theme_state")
     }
 
     function wb_buttons(elm)
@@ -103,11 +140,9 @@
 
         b_el.innerHTML += '👀'
 
-        document.querySelector('#wb_ui_button').addEventListener("click", function (e) {
-            // wb_style_clck_handler(this)
-            document.querySelector("body").classList.toggle("custom_theme")
-            e.classList.toggle('active_f231')
-        });
+        document.querySelector('#wb_ui_button').addEventListener("click", ui_btn_clk_hdlr.bind(b_el))
+
+        if(GM_getValue("custom_theme_state", false)) ui_btn_clk_hdlr({ target: b_el, fake: true })
 
         // ========================
         // users
@@ -131,13 +166,13 @@
               const btns = document.querySelectorAll('button[id$=_ui_button]')
               const currentClass = USER_CLASS_PREFIX + user
 
-              // clear_classList(btns, 'active_')
+              clear_classList(btns, 'active_')
 
               // Если класс уже активен - убираем его
               if (body.classList.contains(currentClass))
               {
                   body.classList.remove(currentClass)
-                  GM_log('User filter enabled!')
+                  GM_log('User filter disabled!')
               }
               else
               {
@@ -147,7 +182,8 @@
                   // Добавляем класс текущего пользователя
                   body.classList.add(currentClass)
                   this.classList.add('active_f231')
-                  GM_log('User filter disabled!')
+
+                  GM_log('User filter enabled!')
               }
           });
 
