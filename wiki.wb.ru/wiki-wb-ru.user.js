@@ -53,7 +53,7 @@
 
     function clck_handler(wb_btn) {
         GM_log('Button clicked!')
-        
+
         document.querySelector("#root").classList.toggle("light_theme")
 
         var panels_state = -1
@@ -62,10 +62,8 @@
 
     function wb_style_button(menu_bar)
     {
-        const css = GM_getResourceText("styles")
         const button_html = '👀'
-        GM_addStyle(css)
-        
+
         waitForElm('header .MuiStack-root:nth-child(2) .MuiStack-root:has( > button.MuiButtonBase-root)').then((elm) => {
 
                 let b_el = GM_addElement(elm, 'button', {
@@ -83,6 +81,41 @@
             });
     }
 
+    // ===============================================
+    // UI button
+    // ===============================================
     wb_style_button();
+
+    // ===============================================
+    // Custom CSS
+    // ===============================================
+    const css = GM_getResourceText("styles")
+
+    GM_addStyle(css)
+
+    // ===============================================
+    // Router listener
+    // ===============================================
+    const originalPushState = history.pushState;
+    const originalReplaceState = history.replaceState;
+
+    history.pushState = function (...args) {
+        window.dispatchEvent(new Event('routechange'));
+        return originalPushState.apply(this, args);
+    };
+
+    history.replaceState = function (...args) {
+        window.dispatchEvent(new Event('routechange'));
+        return originalReplaceState.apply(this, args);
+    };
+
+    window.addEventListener('popstate', () => { window.dispatchEvent(new Event('routechange')); });
+
+    window.addEventListener('routechange', () => {
+        GM_log('Route changed to:', window.location.pathname);
+        setTimeout(() => {
+            wb_style_button();
+        }, 100);
+    });
 
 })();
