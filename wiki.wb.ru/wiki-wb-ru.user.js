@@ -18,6 +18,7 @@
 // @grant       GM_getResourceText
 // @grant       GM_addElement
 // @grant       GM_log
+// @grant       GM_notification
 // @run-at       document-end
 // @updateURL    https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/blob/main/wiki.wb.ru/wiki-wb-ru.user.js
 // @downloadURL  https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/blob/main/wiki.wb.ru/wiki-wb-ru.user.js
@@ -56,29 +57,35 @@
 
         document.querySelector("#root").classList.toggle("light_theme")
 
-        var panels_state = -1
-        panels_state = GM_getValue("panels_state", -1)
+        var panels_state = GM_getValue("panels_state", -1)
+
+        /*
+        GM_notification({
+          text: "New theme has been applied",
+          title: "Theme changed",
+        });
+        */
     }
 
     function wb_style_button(menu_bar)
     {
         const button_html = '👀'
 
+        if ( document.contains(document.getElementById("wb_ui_button")) ) document.getElementById("wb_ui_button").remove();
+
         waitForElm('header .MuiStack-root:nth-child(2) .MuiStack-root:has( > button.MuiButtonBase-root)').then((elm) => {
 
-                let b_el = GM_addElement(elm, 'button', {
-                  id: 'wb_ui_button',
-                  class: 'MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-wmu1fs'
-                });
-
-                b_el.innerHTML += button_html
-
-                document.querySelector('#wb_ui_button').addEventListener("click", function (e) {
-                    clck_handler(this)
-                });
-
-                GM_log('Button added!')
+            let b_el = GM_addElement(elm, 'button', {
+              id: 'wb_ui_button',
+              class: 'MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-wmu1fs'
             });
+
+            b_el.innerHTML += button_html
+
+            document.getElementById("wb_ui_button").addEventListener("click", clck_handler);
+
+            GM_log('Button added!')
+        });
     }
 
     // ===============================================
