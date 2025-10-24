@@ -146,14 +146,20 @@
 
         // ========================
         // users
+        let users_static = ['Жданов_Артём', 'Максим_Тёмкин', 'Максим_Темряков', 'Игорь_Петров', 'Корпусов_Василий', 'Yulian_Efimov', 'Курганов_Илья', 'Yurii_Vasin', 'Eduard_Goryanskiy', 'Unassigned']
 
-        const users = GM_getValue("users_list", ['Игорь_Петров', , 'Жданов_Артём', 'Максим_Темряков', 'Максим_Тёмкин']);
+        const users_saved = GM_getValue("users_list", ['Игорь_Петров', , 'Жданов_Артём', 'Максим_Темряков', 'Максим_Тёмкин']);
         const USER_CLASS_PREFIX = 'show_';
+
+        let diff = users_saved.filter(element => !users_static.includes(element));
+        let intersect = users_static.filter(element => users_saved.includes(element));
+
+        const users = intersect.concat(diff);
 
         users.forEach((user) => {
           let new_el = GM_addElement(elm, 'button', {
             id: user + '_ui_button',
-            title: '@' + user + '.igor51',
+            title: '@' + user,
             class: 'button_a96a button_a96a heightS_efe7 buttonWithoutIcon_b3e8'
           });
           new_el.innerHTML += user;
