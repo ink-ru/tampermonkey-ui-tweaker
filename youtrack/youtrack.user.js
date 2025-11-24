@@ -146,9 +146,9 @@
 
         // ========================
         // users
-        let users_static = ['Жданов_Артём', 'Максим_Тёмкин', 'Максим_Темряков', 'Игорь_Петров', 'Корпусов_Василий', 'Yulian_Efimov', 'Курганов_Илья', 'Yurii_Vasin', 'Eduard_Goryanskiy', 'Unassigned']
+        let users_static = ['Жданов_Артём', 'Максим_Тёмкин', 'Максим_Темряков', 'Игорь_Петров', 'Yulian_Efimov', 'Курганов_Илья', 'Корпусов_Василий', 'Eduard_Goryanskiy', 'Svetlana_Novoseltseva', 'Yurii_Vasin', 'Unassigned']
 
-        const users_saved = GM_getValue("users_list", ['Игорь_Петров', , 'Жданов_Артём', 'Максим_Темряков', 'Максим_Тёмкин']);
+        const users_saved = GM_getValue("users_list", users_static);
         const USER_CLASS_PREFIX = 'show_';
 
         let diff = users_saved.filter(element => !users_static.includes(element));
