@@ -12,6 +12,17 @@ body.custom_theme .yt-board-wrapper .yt-agile-card .yt-agile-card__summary > .yt
     */
 }
 
+body.custom_theme .yt-sticky-panel .yt-agile-board__toolbar
+{
+    padding-top: 0.5rex;
+    padding-bottom: 0.5rex;
+}
+
+body.custom_theme .agile-top-toolbar-container
+{
+      margin-top: -1rex;  
+}
+
 /* =========================== */
 /* ===      TV mode        === */
 /* =========================== */
