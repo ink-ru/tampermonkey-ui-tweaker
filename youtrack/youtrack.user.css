@@ -93,7 +93,7 @@ body.show_Игорь_Петров yt-agile-card:not(:has(yt-issue-custom-field-l
     zoom: .8;
     opacity: .5;
     max-height: 2rem;
-    overflow: hidden;
+    overflow: hidden; display: none;
 }
 
 body.show_Игорь_Петров yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Игорь Петров"])):hover {
@@ -116,7 +116,7 @@ body.show_Максим_Темряков yt-agile-card:not(:has(yt-issue-custom-f
     zoom: .8;
     opacity: .5;
     max-height: 2rem;
-    overflow: hidden;
+    overflow: hidden; display: none;
 }
 
 body.show_Максим_Темряков yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Темряков"])):hover {
@@ -139,7 +139,7 @@ body.show_Жданов_Артём yt-agile-card:not(:has(yt-issue-custom-field-l
     zoom: .8;
     opacity: .5;
     max-height: 2rem;
-    overflow: hidden;
+    overflow: hidden; display: none;
 }
 
 body.show_Жданов_Артём yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Жданов Артём"])):hover {
@@ -162,7 +162,7 @@ body.show_Максим_Тёмкин yt-agile-card:not(:has(yt-issue-custom-field
     zoom: .8;
     opacity: .5;
     max-height: 2rem;
-    overflow: hidden;
+    overflow: hidden; display: none;
 }
 
 body.show_Максим_Тёмкин yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Максим Тёмкин"])):hover {
@@ -185,7 +185,7 @@ body.show_Unassigned yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="As
     zoom: .8;
     opacity: .5;
     max-height: 2rem;
-    overflow: hidden;
+    overflow: hidden; display: none;
 }
 
 body.show_Unassigned yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Unassigned"])):hover {
@@ -208,7 +208,7 @@ body.show_Yurii_Vasin yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="A
     zoom: .8;
     opacity: .5;
     max-height: 2rem;
-    overflow: hidden;
+    overflow: hidden; display: none;
 }
 
 body.show_Yurii_Vasin yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Yurii Vasin"])):hover {
@@ -231,7 +231,7 @@ body.show_Корпусов_Василий yt-agile-card:not(:has(yt-issue-custom
     zoom: .8;
     opacity: .5;
     max-height: 2rem;
-    overflow: hidden;
+    overflow: hidden; display: none;
 }
 
 body.show_Корпусов_Василий yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Корпусов Василий"])):hover {
@@ -254,7 +254,7 @@ body.show_Yulian_Efimov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title=
     zoom: .8;
     opacity: .5;
     max-height: 2rem;
-    overflow: hidden;
+    overflow: hidden; display: none;
 }
 
 body.show_Yulian_Efimov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Yulian Efimov"])):hover {
@@ -277,7 +277,7 @@ body.show_Svetlana_Novoseltseva yt-agile-card:not(:has(yt-issue-custom-field-laz
     zoom: .8;
     opacity: .5;
     max-height: 2rem;
-    overflow: hidden;
+    overflow: hidden; display: none;
 }
 
 body.show_Svetlana_Novoseltseva yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Svetlana Novoseltseva"])):hover {
