@@ -234,8 +234,14 @@ body.show_Корпусов_Василий yt-agile-card:not(:has(yt-issue-custom
     overflow: hidden; display: none;
 }
 
-body.show_Корпусов_Василий yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Корпусов Василий"])):hover {
-    zoom: .8;
+body.show_Корпусов_Василий yt-agile-card:has(yt-issue-custom-field-lazy[title="QA: Корпусов Василий"]) 
+{
+    zoom: 1;
+    opacity: 1;
+    max-height: inherit;
+    overflow: hidden;
+    display: block;
+    box-shadow: .2rex .1rex .1rex black;
 }
 
 /* =========================== */
@@ -257,8 +263,43 @@ body.show_Yulian_Efimov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title=
     overflow: hidden; display: none;
 }
 
-body.show_Yulian_Efimov yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Yulian Efimov"])):hover {
+body.show_Yulian_Efimov yt-agile-card:has(yt-issue-custom-field-lazy[title="QA: Yulian Efimov"]) 
+{
+    zoom: 1;
+    opacity: 1;
+    max-height: inherit;
+    overflow: hidden;
+    display: block;
+    box-shadow: .2rex .1rex .1rex black;
+}
+
+/* =========================== */
+/* ===    Курганов_Илья    === */
+/* =========================== */
+
+body.show_Курганов_Илья yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Курганов Илья"]) {
+    zoom: 1.1;
+    opacity: 1;
+}
+body.show_Курганов_Илья yt-agile-card:has(yt-issue-custom-field-lazy[title="Assignee: Курганов Илья"]):hover {
+    zoom: 1.2;
+    
+}
+body.show_Курганов_Илья yt-agile-card:not(:has(yt-issue-custom-field-lazy[title="Assignee: Курганов Илья"])) {
     zoom: .8;
+    opacity: .5;
+    max-height: 2rem;
+    overflow: hidden; display: none;
+}
+
+body.show_Курганов_Илья yt-agile-card:has(yt-issue-custom-field-lazy[title="QA: Курганов Илья"]) 
+{
+    zoom: 1;
+    opacity: 1;
+    max-height: inherit;
+    overflow: hidden;
+    display: block;
+    box-shadow: .2rex .1rex .1rex black;
 }
 
 /* =========================== */
