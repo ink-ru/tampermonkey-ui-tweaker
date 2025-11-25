@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTrack UI/UX enhancer
 // @namespace    https://github.com/ink-ru/tampermonkey-ui-tweaker/tree/main/youtrack
-// @version      0.0.9
+// @version      0.1.0
 // @description  YouTrack look & feel enhancer
 // @author       https://white-ink.space
 // @copyright    CopyLeft )
@@ -22,7 +22,7 @@
 // @updateURL    https://github.com/ink-ru/tampermonkey-ui-tweaker/raw/refs/heads/main/youtrack/youtrack.user.js
 // @downloadURL  https://github.com/ink-ru/tampermonkey-ui-tweaker/raw/refs/heads/main/youtrack/youtrack.user.js
 // @supportURL   https://github.com//ink-ru/tampermonkey-ui-tweaker/issues
-// @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/youtrack/youtrack.user.css?v=0.0.9
+// @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/youtrack/youtrack.user.css?v=0.1.0
 // @tag         UI/UX
 // @tag         wiki
 // @tag         productivity
@@ -128,6 +128,34 @@
         if(!('fake' in e)) toggle_boolValue("custom_theme_state")
     }
 
+    function uiux_buttons(elm)
+    {
+        let wrapper_el = GM_addElement(elm, 'div', {
+            class: 'yt-inline-block-element yt-gutter-2',
+            id: 'hidden_style_wrapper'
+        });
+        let hiddin_style_el = GM_addElement(wrapper_el, 'input', {
+            id: 'hidden_style_toggle',
+            class: 'ring-ui-input_cb8e',
+            //data-checked="false",
+            type: 'checkbox'
+        });
+
+        // lablel
+        /*
+        <label class="checkbox_b0a2 ng-empty ng-valid" for="rg-checkbox-23">
+  <input data-proxy-ng-disabled="" ng-model="getRowItem().checked" data-proxy-ng-change=""
+        data-proxy-ng-true-value="" data-proxy-ng-false-value="" data-proxy-name="" title="" aria-label=""
+        data-test="ring-checkbox" type="checkbox" class="input_b0b5 ng-pristine ng-valid ng-empty ng-touched" id="rg-checkbox-23">
+  <div class="cellWrapper_af66">
+    <span class="cell_b2d4">
+      <rg-icon class="check_e752 icon_a135 ring-icon" glyph="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;12&quot; height=&quot;12&quot; fill=&quot;currentColor&quot; viewBox=&quot;0 0 12 12&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M10.899 2.05a.6.6 0 0 1 .05.847L4.808 9.8a.6.6 0 0 1-.876.023L1.073 6.92a.6.6 0 0 1 .854-.843l2.41 2.447L10.053 2.1a.6.6 0 0 1 .847-.05Z&quot; clip-rule=&quot;evenodd&quot;/&gt;&lt;/svg&gt;"><span class="icon_f5f6" rg-template="normalizedGlyph" rg-template-class="glyph_a39f"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 12 12" class="glyph_a39f"><path fill-rule="evenodd" d="M10.899 2.05a.6.6 0 0 1 .05.847L4.808 9.8a.6.6 0 0 1-.876.023L1.073 6.92a.6.6 0 0 1 .854-.843l2.41 2.447L10.053 2.1a.6.6 0 0 1 .847-.05Z" clip-rule="evenodd"></path></svg></span></rg-icon></span><span class="label_e024" ng-transclude="" style="display: initial;"></span>
+  </div>
+</label>
+*/
+
+    }
+
     function wb_buttons(elm)
     {
         let b_el = GM_addElement(elm, 'button', {
@@ -203,6 +231,7 @@
          GM_addStyle(css)
 
          wb_buttons(elm)
+         // uiux_buttons(elm)
      });
 
     setTimeout(get_users, 20000)
