@@ -3,7 +3,7 @@
 [![shields.io](https://img.shields.io/badge/shields-io-ligthblue)]([https://shields.io/](https://github.com/ink-ru/shields))
 
 # wikijs-ui-tweaker
-wikijs look &amp; feel enhancer
+wikijs, YuoTrack look &amp; feel enhancer
 
 ## Installation
 ### Automated
