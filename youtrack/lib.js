@@ -1,6 +1,4 @@
-// lib.js
-GM_log('JS lib has been loaded!')
-
+/*! JS library */
 function waitForElm(selector) {
     return new Promise(resolve => {
         if (document.querySelector(selector)) {

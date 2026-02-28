@@ -6,7 +6,7 @@
 // @author       https://white-ink.space
 // @copyright    CopyLeft )
 // @homepage     https://white-ink.space
-// @match        https://youtrack.*/agiles/*
+// @include        https://youtrack*/agiles/*
 // @exclude      https://youtrack.*/issue/*
 // @icon         https://youtrack.jetbrains.com/manager/favicon.ico
 // @icon64       https://youtrack.jetbrains.com/manager/apple-touch-icon.png
@@ -37,32 +37,21 @@
         url : "https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/youtrack/lib.js",
         onload : (remote_lib) =>
         {
+            /*
             let jslib = document.createElement('script');
-            // jslib.type = 'module';
-            jslib.innerText = remote_lib.responseText;
+            jslib.setAttribute("nomodule", "true");
+            jslib.type = 'text/javascript'; // jslib.type = 'module';
+            jslib.textContent = remote_lib.responseText;
             document.head.appendChild(jslib);
+            */
+
+            GM_addElement('script', {
+                nomodule: 'true',
+                type: 'text/javascript',
+                textContent: remote_lib.responseText
+            });
         }
     });
-
-    function waitForElm(selector) {
-        return new Promise(resolve => {
-            if (document.querySelector(selector)) {
-                return resolve(document.querySelector(selector));
-            }
-
-            const observer = new MutationObserver(mutations => {
-                if (document.querySelector(selector)) {
-                    observer.disconnect();
-                    resolve(document.querySelector(selector));
-                }
-            });
-
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true
-            });
-        });
-    }
 
     function get_users()
     {
