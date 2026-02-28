@@ -1,6 +1,6 @@
 /*! JS library */
 
-function waitForElm(selector) {
+function waitElm(selector) {
     return new Promise(resolve => {
         if (document.querySelector(selector)) {
             return resolve(document.querySelector(selector));
