@@ -47,7 +47,8 @@
 
             GM_addElement('script', {
                 nomodule: 'true',
-                type: 'text/javascript',
+                // type: 'text/javascript',
+                type: 'module',
                 textContent: remote_lib.responseText
             });
         }
