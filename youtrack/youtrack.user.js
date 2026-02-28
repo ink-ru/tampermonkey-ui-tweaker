@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         YouTrack UI/UX enhancer
 // @namespace    https://github.com/ink-ru/tampermonkey-ui-tweaker/tree/main/youtrack
-// @version      0.1.1
+// @version      0.1.2
 // @description  YouTrack look & feel enhancer
 // @author       https://white-ink.space
 // @copyright    CopyLeft )
 // @homepage     https://white-ink.space
-// @match        https://youtrack.wildberries.ru/agiles/*
-// @exclude      https://youtrack.wildberries.ru/issue/*
+// @match        https://youtrack.*/agiles/*
+// @exclude      https://youtrack.*/issue/*
 // @icon         https://youtrack.jetbrains.com/manager/favicon.ico
 // @icon64       https://youtrack.jetbrains.com/manager/apple-touch-icon.png
 // @grant       GM_addStyle
@@ -15,13 +15,14 @@
 // @grant       GM_getValue
 // @grant       GM_registerMenuCommand
 // @grant       GM_unregisterMenuCommand
+// @grant       GM_xmlhttpRequest
 // @grant       GM_getResourceText
 // @grant       GM_addElement
 // @grant       GM_log
 // @run-at       document-end
 // @updateURL    https://github.com/ink-ru/tampermonkey-ui-tweaker/raw/refs/heads/main/youtrack/youtrack.user.js
 // @downloadURL  https://github.com/ink-ru/tampermonkey-ui-tweaker/raw/refs/heads/main/youtrack/youtrack.user.js
-// @supportURL   https://github.com//ink-ru/tampermonkey-ui-tweaker/issues
+// @supportURL   https://github.com/ink-ru/tampermonkey-ui-tweaker/issues
 // @resource     styles https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/youtrack/youtrack.user.css?v=0.1.1
 // @tag         UI/UX
 // @tag         wiki
@@ -30,6 +31,18 @@
 
 (function() { // https://www.tampermonkey.net/documentation.php
     'use strict';
+
+    GM_xmlhttpRequest({
+        method : "GET",
+        url : "https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/youtrack/lib.js",
+        onload : (remote_lib) =>
+        {
+            let jslib = document.createElement('script');
+            // jslib.type = 'module';
+            jslib.innerText = remote_lib.responseText;
+            document.head.appendChild(jslib);
+        }
+    });
 
     function waitForElm(selector) {
         return new Promise(resolve => {
