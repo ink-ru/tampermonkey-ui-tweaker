@@ -1,4 +1,5 @@
 /*! JS library */
+
 function waitForElm(selector) {
     return new Promise(resolve => {
         if (document.querySelector(selector)) {
@@ -18,3 +19,5 @@ function waitForElm(selector) {
         });
     });
 }
+
+console.log('Js library has been included!')
