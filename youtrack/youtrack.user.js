@@ -32,28 +32,21 @@
 (function() { // https://www.tampermonkey.net/documentation.php
     'use strict';
 
+    /*
     GM_xmlhttpRequest({
         method : "GET",
         url : "https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/youtrack/lib.js",
         onload : (remote_lib) =>
         {
-            /*
-            let jslib = document.createElement('script');
-            jslib.setAttribute("nomodule", "true");
-            jslib.type = 'text/javascript'; // jslib.type = 'module';
-            jslib.textContent = remote_lib.responseText;
-            document.head.appendChild(jslib);
-            */
-
             GM_addElement('script', {
                 nomodule: 'true',
-                // type: 'text/javascript',
                 type: 'module',
                 textContent: remote_lib.responseText
             });
         }
     });
-
+    */
+    
     function waitForElm(selector) {
         return new Promise(resolve => {
             if (document.querySelector(selector)) {
@@ -76,7 +69,12 @@
 
     function get_users()
     {
-        const users = [...new Set(
+        const users_empty = ['Unassigned']
+        // To erase
+        //GM_setValue("users_list", users_empty)
+        const users_saved = GM_getValue("users_list", users_empty)
+
+        const users_new = [...new Set(
                         [...document.querySelectorAll('yt-issue-custom-field-lazy[title^="Assignee:"]')]
                          .map(el => (el.getAttribute('title') || '')
                          .replace(/^Assignee:\s*/, '')
@@ -85,13 +83,24 @@
                         )
                         .filter(Boolean)
                         )];
+        
+        
+        
 
-        if (users.length > 0)
+        if (users_new.length > users_saved.length)
         {
+
+            let diff      =   users_new.filter(element => !users_saved.includes(element));
+            let intersect =   users_new.filter(element => users_saved.includes(element));
+    
+            const users = intersect.concat(diff);
+            GM_log(diff,intersect)
+
             GM_setValue("users_list", users)
-            // GM_log('Users list has been updated!')
+            GM_log('Users list has been updated!')
         }
-        else GM_log('No users have been found, nothing to do!')
+        else GM_log('No users have been found, nothing to do!', users_new.length, users_saved.length)
+        
     }
 
     // ===========================================
@@ -190,6 +199,7 @@
         // WB styles
 
         b_el.innerHTML += '👀'
+        const USER_CLASS_PREFIX = 'show_';
 
         document.querySelector('#wb_ui_button').addEventListener("click", ui_btn_clk_hdlr.bind(b_el))
 
@@ -197,15 +207,10 @@
 
         // ========================
         // users
-        let users_static = ['Жданов_Артём', 'Максим_Тёмкин', 'Максим_Темряков', 'Игорь_Петров', 'Yulian_Efimov', 'Курганов_Илья', 'Корпусов_Василий', 'Eduard_Goryanskiy', 'Svetlana_Novoseltseva', 'Yurii_Vasin', 'Unassigned']
+        get_users();
 
-        const users_saved = GM_getValue("users_list", users_static);
-        const USER_CLASS_PREFIX = 'show_';
-
-        let diff = users_saved.filter(element => !users_static.includes(element));
-        let intersect = users_static.filter(element => users_saved.includes(element));
-
-        const users = intersect.concat(diff);
+        const users_empty = ['Unassigned']
+        const users = GM_getValue("users_list", users_empty) 
 
         users.forEach((user) => {
           let new_el = GM_addElement(elm, 'button', {
@@ -249,14 +254,20 @@
 
     }
 
-     waitForElm('.yt-agile-board__toolbar > ng-transclude').then((elm) => {
-         const css = GM_getResourceText("styles")
-         GM_addStyle(css)
+    setInterval(get_users, 3000)
 
-         wb_buttons(elm)
-         // uiux_buttons(elm)
-     });
+    setTimeout(() => {
 
-    setTimeout(get_users, 20000)
+        waitForElm('.yt-agile-board__toolbar > ng-transclude').then((elm) => {
+            const css = GM_getResourceText("styles")
+            GM_addStyle(css)
+
+            wb_buttons(elm)
+            // uiux_buttons(elm)
+        });
+
+    }, 1000);
+
+    
 
 })();
