@@ -15,7 +15,6 @@
 // @grant       GM_getValue
 // @grant       GM_registerMenuCommand
 // @grant       GM_unregisterMenuCommand
-// @grant       GM_xmlhttpRequest
 // @grant       GM_getResourceText
 // @grant       GM_addElement
 // @grant       GM_log
@@ -33,6 +32,8 @@
     'use strict';
 
     /*
+    // @grant       GM_xmlhttpRequest
+
     GM_xmlhttpRequest({
         method : "GET",
         url : "https://raw.githubusercontent.com/ink-ru/tampermonkey-ui-tweaker/refs/heads/main/youtrack/lib.js",
@@ -84,29 +85,23 @@
                         .filter(Boolean)
                         )];
         
-        
-        
-
         if (users_new.length > users_saved.length)
         {
-
             let diff      =   users_new.filter(element => !users_saved.includes(element));
             let intersect =   users_new.filter(element => users_saved.includes(element));
-    
             const users = intersect.concat(diff);
-            GM_log(diff,intersect)
-
+            
             GM_setValue("users_list", users)
-            GM_log('Users list has been updated!')
+            // GM_log(diff,intersect)
+            // GM_log('Users list has been updated!')
         }
-        else GM_log('No users have been found, nothing to do!', users_new.length, users_saved.length)
-        
+        // else GM_log('No users have been found, nothing to do!', users_new.length, users_saved.length)  
     }
 
     // ===========================================
     //          Remove all classes by part
     // ===========================================
-    function clear_classList(el, part)
+    function clear_class_list(el, part)
     {
         // DOM Object
         if('className' in el)
@@ -117,21 +112,20 @@
 
             el.className = classes.join(" ").trim()
 
-            return true // POSIX 0, EX_OK
+            return true
         }
-        // if((el instanceof NodeList) or (el instanceof Array))
         else if(typeof el[Symbol.iterator] === 'function')
         {
             for (const item of el) // NodeList
             {
-              clear_classList(item, part)
+              clear_class_list(item, part)
             }
         }
 
-        return false // POSIX 1 - general error
+        return false
     }
 
-    function toggle_boolValue(var_name)
+    function toggle_bool_val(var_name)
     {
         if (typeof var_name === 'string')
         {
@@ -157,7 +151,7 @@
 
         document.querySelector("body").classList.toggle("custom_theme")
         target.classList.toggle('active_f231')
-        if(!('fake' in e)) toggle_boolValue("custom_theme_state")
+        if(!('fake' in e)) toggle_bool_val("custom_theme_state")
     }
 
     function uiux_buttons(elm)
@@ -213,45 +207,41 @@
         const users = GM_getValue("users_list", users_empty) 
 
         users.forEach((user) => {
-          let new_el = GM_addElement(elm, 'button', {
+
+            let new_el = GM_addElement(elm, 'button', {
             id: user + '_ui_button',
             title: '@' + user,
             class: 'button_a96a button_a96a heightS_efe7 buttonWithoutIcon_b3e8'
-          });
-          new_el.innerHTML += user;
+            });
+            new_el.innerHTML += user;
 
-          document.querySelector('#' + user + '_ui_button').addEventListener("click", function (e)
-          {
-              // GM_log(e.currentTarget === this)
+            document.querySelector('#' + user + '_ui_button')?.addEventListener("click", function (e)
+            {
+                const body = document.body
+                const btns = document.querySelectorAll('button[id$=_ui_button]')
+                const currentClass = USER_CLASS_PREFIX + user
 
-              const body = document.body
-              const btns = document.querySelectorAll('button[id$=_ui_button]')
-              const currentClass = USER_CLASS_PREFIX + user
+                clear_class_list(btns, 'active_')
 
-              clear_classList(btns, 'active_')
+                // Если класс уже активен - убираем его
+                if (body.classList.contains(currentClass))
+                {
+                    body.classList.remove(currentClass)
+                    // GM_log('User filter disabled!')
+                }
+                else
+                {
+                    // Убираем все классы пользователей
+                    clear_class_list(body, USER_CLASS_PREFIX)
 
-              // Если класс уже активен - убираем его
-              if (body.classList.contains(currentClass))
-              {
-                  body.classList.remove(currentClass)
-                  GM_log('User filter disabled!')
-              }
-              else
-              {
-                  // Убираем все классы пользователей
-                  clear_classList(body, USER_CLASS_PREFIX)
+                    // Добавляем класс текущего пользователя
+                    body.classList.add(currentClass)
+                    this.classList.add('active_f231')
 
-                  // Добавляем класс текущего пользователя
-                  body.classList.add(currentClass)
-                  this.classList.add('active_f231')
-
-                  GM_log('User filter enabled!')
-              }
-          });
-
+                    // GM_log('User filter enabled!')
+                }
+            });
         });
-
-
     }
 
     setInterval(get_users, 3000)
